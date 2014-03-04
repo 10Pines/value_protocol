@@ -1,5 +1,4 @@
 require 'value_protocol/version'
+require 'value_protocol/protocol'
 
-module ValueProtocol
-  # Your code goes here...
-end
+Object.send :include, ValueProtocol::Protocol

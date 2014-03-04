@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = ValueProtocol::VERSION
   spec.authors       = ['Nicolas Papagna Maldonado']
   spec.email         = ['nicolas.papagna@10pines.com']
-  spec.summary       = %q{Implements Smalltalk's #value protocol}
+  spec.summary       = %q{Makes all objects polymorphic with respect to the :call message, allowing to use any objects where a block is expected.}
   spec.description   = %q{Makes all objects polymorphic with respect to the :call message, allowing to use any objects where a block is expected.}
   spec.homepage      = 'https://github.com/10Pines/value_protocol.git'
   spec.license       = 'MIT'
