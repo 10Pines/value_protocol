@@ -1,11 +1,11 @@
 # ValueProtocol
 
 Allows passing any object where a block is expected.  
-It is inpired in the way Smalltalk deals with the same scenario, by making use of the ```#value``` message.
+It is inspired by the way Smalltalk deals with the same scenario, making use of the ```#value``` message.
 
 ## Motivation
 
-I wrote this gem to avoid having to wrap objects inside lambdas (and thus, avoid repeating code) when working with messages like ```:detect```
+I wrote this gem to avoid having to wrap objects inside lambdas (and thus, avoid repeating code) when working with messages like ```:detect```.
 
 I wanted to turn this:
 
@@ -19,7 +19,7 @@ Into something like this, reducing the noise introduced by the ```lambda``` part
 numbers.detect(2) { |number| number.even? }
 ```
 
-You can even pass an object when an implicit block is expected:
+Also, I wanted to be able to pass any object when an implicit block is expected:
 
 ```ruby
 # create an instance of a complex condition
@@ -29,16 +29,16 @@ numbers.select &even_numbers
 
 ## How does it works?
 
-Basically, it works by implementing ```:call``` returning ```self```, and implementing ```:to_proc``` returning a proc that evaluates ```self.call``` in ```Object```.
+Basically, it works by implementing ```:call``` (returning ```self```), and implementing ```:to_proc``` (returning a proc that evaluates ```self.call```) in ```Object```.
 
-It sound more complicated than it really is. Check the implementation & specs!
+It sound more complicated than it really is. Take a look at the [implementation](lib/value_protocol/protocol.rb) and [specs](spec/value_protocol_spec.rb)!
 
 ## Usage
 
-Just pass any object where a block is expected (respecting the & operator when needed). That's all.
+Just pass any object where a block is expected (respecting the & operator when needed). That's all.  
 If you want to implement custom behavior, override the ```:call``` method in your class (remember to respect the signature!).
 
-In most cases, you won't need to override ```:to_proc```.
+For most scenarios, you won't need to override ```:to_proc```.
 
 ## Feel like reading a blog post?
 
