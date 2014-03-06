@@ -42,7 +42,7 @@ For most scenarios, you won't need to override ```:to_proc```.
 
 ## Feel like reading a blog post?
 
-Check this out! (TODO: add url)
+Check this out! [Rock Your Ruby: The Value of Value](http://www.10pines.com/blog/posts/rock-your-ruby-the-value-of-value)
 
 ## Installation
 
