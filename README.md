@@ -23,13 +23,13 @@ Also, I wanted to be able to pass any object when an implicit block is expected:
 
 ```ruby
 # create an instance of a complex condition
-even_numbers = EvenNumberConition.new
+even_numbers = EvenNumberCondition.new
 numbers.select &even_numbers
 ```
 
-## How does it works?
+## How does it work?
 
-Basically, it works by implementing ```:call``` (returning ```self```), and implementing ```:to_proc``` (returning a proc that evaluates ```self.call```) in ```Object```.
+Value Protocol implements `:call` (returning `self`), and implements `:to_proc` (returning a proc that evaluates `self.call`) in `Object`.
 
 It sound more complicated than it really is. Take a look at the [implementation](lib/value_protocol/protocol.rb) and [specs](spec/value_protocol_spec.rb)!
 
